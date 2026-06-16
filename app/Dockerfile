@@ -9,6 +9,8 @@ RUN pip install --no-cache-dir --target=/app/deps -r requirements.txt
 
 COPY app.py .
 
+RUN chown -R appuser:appuser /app/deps /app/app.py
+
 
 FROM gcr.io/distroless/python3-debian12
 
